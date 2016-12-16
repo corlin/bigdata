@@ -1,0 +1,12 @@
+2016-12-15T08:31:13.747089Z 1 [Note] A temporary password is generated for root@localhost: v6/4lBX0?Nq=
+
+If you lose this password, please consult the section How to Reset the Root Password in the MySQL reference manual.
+
+SET PASSWORD FOR 'tom'@'localhost' = PASSWORD('foobar');
+
+mysql --user=root --pass='' mysql -e "update user set password=password('newpw') \
+where user='root'; flush privileges;"
+
+
+ALTER DATABASE appfuse_light_struts CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE tablename CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
